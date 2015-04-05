@@ -1,7 +1,4 @@
-﻿using RedditApp1.Data;
-using RedditApp1.Common;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,8 +15,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
+using RedditApp1.DataModel;
+using Studiomecha.Hotpage.Reddit.Common;
 
-namespace RedditApp1
+namespace Studiomecha.Hotpage.Reddit
 {
     /// <summary>
     /// A page that displays details for a single item within a group.

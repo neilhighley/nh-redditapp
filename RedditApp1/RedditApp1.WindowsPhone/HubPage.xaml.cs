@@ -1,7 +1,4 @@
-﻿using RedditApp1.Common;
-using RedditApp1.Data;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +8,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -22,8 +20,12 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
+using HotpageReddit;
+using RedditApp1.DataModel;
+using Studiomecha.Hotpage.Reddit.Common;
 
-namespace RedditApp1
+
+namespace Studiomecha.Hotpage.Reddit
 {
     /// <summary>
     /// A page that displays a grouped collection of items.
@@ -78,9 +80,12 @@ namespace RedditApp1
         /// session.  The state will be null the first time a page is visited.</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroups = await SampleDataSource.GetGroupsAsync();
-            this.DefaultViewModel["Groups"] = sampleDataGroups;
+            var smNews = await StudioMechaDataSource.GetAsync();
+            var redNews = await RedditDataSource.GetAsync();
+            var redHistory = await RedditHistoryDataSource.GetAsync();
+            this.DefaultViewModel["Reddit"] = redNews;
+
+            this.DefaultViewModel["News"] = smNews;
         }
 
         /// <summary>
@@ -96,35 +101,7 @@ namespace RedditApp1
             // TODO: Save the unique state of the page here.
         }
 
-        /// <summary>
-        /// Shows the details of a clicked group in the <see cref="SectionPage"/>.
-        /// </summary>
-        /// <param name="sender">The source of the click event.</param>
-        /// <param name="e">Details about the click event.</param>
-        private void GroupSection_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var groupId = ((SampleDataGroup)e.ClickedItem).UniqueId;
-            if (!Frame.Navigate(typeof(SectionPage), groupId))
-            {
-                throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
-            }
-        }
-
-        /// <summary>
-        /// Shows the details of an item clicked on in the <see cref="ItemPage"/>
-        /// </summary>
-        /// <param name="sender">The source of the click event.</param>
-        /// <param name="e">Defaults about the click event.</param>
-        private void ItemView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
-            if (!Frame.Navigate(typeof(ItemPage), itemId))
-            {
-                throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
-            }
-        }
-
-        #region NavigationHelper registration
+       #region NavigationHelper registration
 
         /// <summary>
         /// The methods provided in this section are simply used to allow
@@ -149,5 +126,20 @@ namespace RedditApp1
         }
 
         #endregion
+
+        private void NewsItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void redditItem_click(object sender, RoutedEventArgs e)
+        {
+          this.Frame.Navigate(typeof (RedditContent),sender);
+        }
+
+        private void redditHistoryItem_click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(RedditContent),sender);
+        }
     }
 }

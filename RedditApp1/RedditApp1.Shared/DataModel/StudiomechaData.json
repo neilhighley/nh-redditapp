@@ -1,0 +1,33 @@
+﻿{
+
+    "News":  [
+                { "Title": "The news title", "SubHeading": "Brand new news", "Url": "http://www.studiomecha.net" },
+                { "Title": "More News", "SubHeading": "Oh nooo more news", "Url": "http://www.studiomecha.net" }
+    ],
+    "Adverts": [ { "Title": "An Advert for something", "Description": "A Description", "Url": "http://www.google.com", "Id": "1" } ],
+    "Settings": [
+        { "Name": "EnableAdvertising", "Value": "true" }
+    ],
+    "Reddit": [
+        {
+            "Title": "Reddit Item one",
+            "UpVotes": 1000,
+            "DownVotes": 10,
+            "Score": 9990,
+            "Permalink": "/r/todayilearned/comments/2tfsm4/til_a_scientist_stationed_in_antarctica_managed/",
+            "Thumbnail": "http://b.thumbs.redditmedia.com/NieqRXYFaIRFZs4p25DOubcQCwNkJnmDq9P9Co4_RZw.jpg",
+            "Over18": false,
+            "Url": "http://nymag.com/thecut/2014/02/tinder-makes-its-first-match-in-antarctica.html"
+        },
+        {
+            "Title": "Reddit Item two",
+            "UpVotes": 100,
+            "DownVotes": 50,
+            "Score": 890,
+            "Permalink": "/r/todayilearned/comments/2tfsm4/til_a_scientist_stationed_in_antarctica_managed/",
+            "Thumbnail": "http://b.thumbs.redditmedia.com/NieqRXYFaIRFZs4p25DOubcQCwNkJnmDq9P9Co4_RZw.jpg",
+            "Over18": false,
+            "Url": "http://nymag.com/thecut/2014/02/tinder-makes-its-first-match-in-antarctica.html"
+        }
+    ]
+}

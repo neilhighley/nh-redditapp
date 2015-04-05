@@ -1,7 +1,4 @@
-﻿using RedditApp1.Data;
-using RedditApp1.Common;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,8 +13,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using RedditApp1.DataModel;
+using Studiomecha.Hotpage.Reddit.Common;
 
-namespace RedditApp1
+namespace Studiomecha.Hotpage.Reddit
 {
     /// <summary>
     /// A page that displays an overview of a single group, including a preview of the items

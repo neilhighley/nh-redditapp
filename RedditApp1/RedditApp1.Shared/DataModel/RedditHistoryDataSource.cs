@@ -10,13 +10,13 @@ namespace RedditApp1.DataModel
 {
     
     /// <summary>
-    /// Data from live reddit service
+    /// Historical datasource, from local storage
     /// </summary>
-    public sealed class RedditDataSource
+    public sealed class RedditHistoryDataSource
    {
       // private static string _redditURI = "http://www.reddit.com/hot.json";
 
-       private static RedditDataSource _redditDataSource = new RedditDataSource();
+        private static RedditHistoryDataSource _redditDataSource = new RedditHistoryDataSource();
 
        private ObservableCollection<RedditDataItem> _items = new ObservableCollection<RedditDataItem>();
        public ObservableCollection<RedditDataItem> Items

@@ -15,11 +15,11 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-using RedditApp1.Common;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
+using Studiomecha.Hotpage.Reddit.Common;
 
-namespace RedditApp1
+namespace Studiomecha.Hotpage.Reddit
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

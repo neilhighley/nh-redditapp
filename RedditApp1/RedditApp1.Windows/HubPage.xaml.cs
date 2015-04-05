@@ -12,12 +12,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using RedditApp1.Data;
-using RedditApp1.Common;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
+using RedditApp1.DataModel;
+using Studiomecha.Hotpage.Reddit.Common;
 
-namespace RedditApp1
+namespace Studiomecha.Hotpage.Reddit
 {
     /// <summary>
     /// A page that displays a grouped collection of items.
